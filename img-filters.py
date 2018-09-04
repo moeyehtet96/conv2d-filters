@@ -1,7 +1,6 @@
 from PIL import Image
 import numpy as np
-# to add time taken feature later
-#import time
+import time
 
 def main():
     # ask the user for the input image
@@ -26,8 +25,12 @@ def main():
     choice_filter = choose_filter(choice_num)
     flipped_filter = diagonal_flip(choice_filter)
 
+    start_time = time.time()
     # perform the convolution
     img_filtered = conv2d(img,flipped_filter)
+
+    time_taken = time.time() - start_time
+    print("Time taken:",time_taken)
 
     # to add save to file feature later
     #imgout_name = input("Enter output image name with extension: ") # ask for file name to save the image
@@ -35,6 +38,8 @@ def main():
     # show both original and filtered image to the user
     img.show()
     img_filtered.show()
+    # saving image not working right now
+    #img_filtered.save("filtered_image.jpg", "JPEG")
 
 ############################################################
 # This function is for choosing the desired filter kernel. #
