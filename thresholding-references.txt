@@ -1,0 +1,11 @@
+Otsu's Method
+https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Otsu's_method.html
+
+Threshold-based edge detection algorithm
+http://ijetch.org/papers/260-T754.pdf
+
+Automatic Thresholding
+http://www.math.tau.ac.il/~turkel/notes/otsu.pdf
+
+Otsu's Method Calculation example
+http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html

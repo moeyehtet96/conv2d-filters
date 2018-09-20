@@ -1,3 +1,11 @@
+##############################################################################################
+# Name:      img-filters.py                                                                  #
+# Function:  This code applies various filters to grayscale images by performing convolution #
+#            of the input image and predetermined impulse response matrices.                 #
+# Author:    Moe Ye Htet                                                                     #
+# Last Edit: 09/06/18 5:39 PM                                                                #
+##############################################################################################
+
 from PIL import Image
 import numpy as np
 import time
@@ -25,12 +33,11 @@ def main():
     choice_filter = choose_filter(choice_num)
     flipped_filter = diagonal_flip(choice_filter)
 
+    # perform the convolution and print the time taken
     start_time = time.time()
-    # perform the convolution
     img_filtered = conv2d(img,flipped_filter)
-
     time_taken = time.time() - start_time
-    print("Time taken:",time_taken)
+    print("Time taken: " + str(time_taken) + "s\n")
 
     # to add save to file feature later
     #imgout_name = input("Enter output image name with extension: ") # ask for file name to save the image
@@ -161,6 +168,7 @@ def conv2d(img, sel_filter):
     img_out = Image.fromarray(img_mat_fil)
 
     return img_out
+    
 
 if __name__ == "__main__":
     main()
